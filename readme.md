@@ -16,8 +16,25 @@
 + Cors-headers
 + PIP
 + Gunicorn
+## ERD
+User
+- id: int (PK)
+- username: string
+- email: string
+- password: string
+- created_at: datetime
+- updated_at: datetime
 
-## Models (ERD):
+Task
+- id: int (PK)
+- title: string
+- description: text
+- due_date: datetime
+- is_completed: boolean
+- user_id: int (FK to User)
+
+
+## Route Map:
 | Route Name    | Endpoint               | Method | Description                               |
 |---------------|------------------------|--------|-------------------------------------------|
 | Task List     | /api/tasks/            | GET    | Retrieve all tasks                        |
